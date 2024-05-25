@@ -11,14 +11,15 @@ int firstOcc(vector<int> arr)
         int mid = (s + e) / 2;
         if (arr[mid] == t)
         {
-            if (mid < 0 || arr[mid - 1] != t)
+            if (mid-1 < s && arr[mid - 1] != t)
             {
-                return mid;
+ans = mid;
+                e = mid - 1;
+                
             }
             else
             {
-                ans = mid;
-                e = mid - 1;
+                return mid;
             }
         }
 
