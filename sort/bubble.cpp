@@ -8,7 +8,7 @@ void bubbleSort(int array[], int size)
 {
 
     // loop to access each array element
-    for (int step = 0; step < size; ++step)
+    for (int step = 0; step < size - 1; ++step)
     {
 
         // check if swapping occurs
@@ -18,11 +18,9 @@ void bubbleSort(int array[], int size)
         for (int i = 0; i < size - step - 1; ++i)
         {
 
-            // compare two array elements
-            // change > to < to sort in descending order
+            // compare two adjacent elements
             if (array[i] > array[i + 1])
             {
-
                 // swapping occurs if elements
                 // are not in intended order
                 int temp = array[i];
