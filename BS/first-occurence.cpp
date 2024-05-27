@@ -4,21 +4,21 @@ using namespace std;
 
 int firstOcc(vector<int> arr)
 {
-    int s = 0, e = arr.size() - 1, t = 3, ans = -1;
+    int s = 0, e = arr.size() - 1, t = 3, ans = -1,mid = (s + e) / 2;
 
     while (s <= e)
     {
-        int mid = (s + e) / 2;
         if (arr[mid] == t)
         {
-            if (mid < 0 || arr[mid - 1] != t)
-            {
-                return mid;
-            }
-            else
+            if (mid-1 > s && arr[mid - 1] == t)
             {
                 ans = mid;
                 e = mid - 1;
+                
+            }
+            else
+            {
+                return mid;
             }
         }
 
@@ -30,6 +30,7 @@ int firstOcc(vector<int> arr)
         {
             s = mid + 1;
         }
+        mid = (s + e) / 2;
     }
     return ans;
 }
